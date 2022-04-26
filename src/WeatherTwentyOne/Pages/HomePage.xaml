@@ -27,30 +27,28 @@
     </ContentPage.MenuBarItems>
 
     <Grid
-        ColumnDefinitions="{OnIdiom Phone='*', Default='*,500'}"
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*,480'}"
         RowDefinitions="*"
         >
 
         <!-- Main content -->
-        <ScrollView Grid.Column="0">
+        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}">
             <VerticalStackLayout
                 Padding="{OnIdiom Phone='0,50',Default='0,50'}"
                 Spacing="{OnIdiom Phone=25,Default=50}">
                 
                 <!-- Top widgets -->
-                <FlexLayout
+                <HorizontalStackLayout
                     IsVisible="{OnIdiom Phone=False, Default=True}"
-                    MinimumHeightRequest="360"
-                    AlignItems="Center"
-                    AlignContent="Center"
-                    JustifyContent="SpaceEvenly">
+                    Padding="30,0,30,0"
+                    MinimumHeightRequest="360">
                     <v:CurrentWidget
                         WidthRequest="200" />
                     <v:WindLiveWidget 
                         x:Name="WindWidget"
                         WidthRequest="200" />
                     
-                </FlexLayout>
+                </HorizontalStackLayout>
 
                 <v:CurrentWidget
                     IsVisible="{OnIdiom Phone=True, Default=False}"/>
@@ -63,8 +61,13 @@
             </VerticalStackLayout>
         </ScrollView>
 
+        <!-- Menu -->
+        <v:NavBarView
+            x:Name="NavBar"
+            Grid.Row="{OnIdiom Phone=1, Default=0}"/>
+
         <!-- Widget panel -->
-        <v:WidgetsPanel Grid.Column="{OnIdiom Phone=0, Default=1}"
+        <v:WidgetsPanel Grid.Column="{OnIdiom Phone=0, Default=2}"
                         IsVisible="{OnIdiom Phone=False, Default=True}"/>
 
     </Grid>

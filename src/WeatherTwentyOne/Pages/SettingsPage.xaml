@@ -8,10 +8,11 @@
 
     
         <Grid
-            ColumnDefinitions="*"
-            RowDefinitions="{OnIdiom Phone='100,*', Default='100,*,0'}"
+            ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+            RowDefinitions="{OnIdiom Phone='100,*,68', Default='100,*,0'}"
             >
-            <ScrollView Grid.Row="1"
+            <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}"
+                        Grid.Row="1"
                         Margin="{OnIdiom Phone=15, Default=25}"
                         >
                 <VerticalStackLayout Spacing="8">
@@ -123,8 +124,15 @@
 
             </ScrollView>
 
-            <Grid 
+        <!-- Desktop Menu -->
+        <v:NavBarView x:Name="NavBar"
+                Grid.Column="0"
+                Grid.Row="{OnIdiom Phone=2, Default=0}"
+                Grid.RowSpan="{OnIdiom Phone=1,Default=2}"/>
+
+        <Grid
                 Grid.Row="0" 
+                Grid.Column="{OnIdiom Phone=0, Default=1}"
                 Grid.ColumnDefinitions="16,75,16,*,100,16"
                 >
 
@@ -145,15 +153,15 @@
             <Image  HorizontalOptions="Center"
                         VerticalOptions="Center"
                         Grid.Column="1"
-                        WidthRequest="75"
-                        HeightRequest="75"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         Aspect="AspectFill"
-                        Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
+                        Source="david.png">
                     <Image.Clip>
                         <EllipseGeometry 
-                                Center="75,75"
-                                RadiusX="75"
-                                RadiusY="75"/>
+                                Center="40,40"
+                                RadiusX="40"
+                                RadiusY="40"/>
                     </Image.Clip>
                 </Image>
 

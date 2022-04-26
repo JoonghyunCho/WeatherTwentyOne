@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using WeatherTwentyOne.Services;
 using WeatherTwentyOne.ViewModels;
@@ -15,14 +16,16 @@ public partial class HomePage : ContentPage
     {
         InitializeComponent();
 
+        NavBar.ActiveTab = "Home";
+
         BindingContext = vm;
 
         if (!isSetup)
         {
             isSetup = true;
 
-            SetupAppActions();
-            SetupTrayIcon();
+            //SetupAppActions();
+            //SetupTrayIcon();
         }
     }
 

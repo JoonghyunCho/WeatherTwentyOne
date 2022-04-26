@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Microsoft.Maui.ApplicationModel;
 using WeatherTwentyOne.Models;
 
 namespace WeatherTwentyOne.ViewModels;

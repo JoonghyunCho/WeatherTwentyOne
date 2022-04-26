@@ -7,17 +7,17 @@
         <ResourceDictionary Source="Resources/Styles/DefaultTheme.xaml"/>
     </Application.Resources>
 
-    <Application.MainPage>
+    <!--<Application.MainPage>
         <Shell 
             FlyoutWidth="68"
             FlyoutBehavior="{OnIdiom Phone=Disabled, Default=Locked}">
 
-            <!--<Shell.FlyoutHeaderTemplate>
+            --><!--<Shell.FlyoutHeaderTemplate>
                 <DataTemplate>
                     <BoxView HeightRequest="68"/>
                 </DataTemplate>
 
-            </Shell.FlyoutHeaderTemplate>-->
+            </Shell.FlyoutHeaderTemplate>--><!--
 
             <Shell.FlyoutFooterTemplate>
                 <DataTemplate>
@@ -39,7 +39,7 @@
 
             
 
-            <!-- Desktop/Tablet-->
+            --><!-- Desktop/Tablet--><!--
             <FlyoutItem Title="Home" Icon="tab_home.png">
                 <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
             </FlyoutItem>
@@ -53,7 +53,7 @@
                 <ShellContent ContentTemplate="{DataTemplate page:SettingsPage}"/>
             </FlyoutItem>
 
-            <!-- Phone -->
+            --><!-- Phone --><!--
             <TabBar x:Name="PhoneTabs">
                 <Tab Title="Home" Icon="tab_home.png">
                     <ShellContent ContentTemplate="{DataTemplate page:HomePage}"/>
@@ -84,5 +84,5 @@
 
             </Shell.ItemTemplate>
         </Shell>
-    </Application.MainPage>
+    </Application.MainPage>-->
 </Application>

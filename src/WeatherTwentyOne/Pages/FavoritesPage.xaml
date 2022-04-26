@@ -15,7 +15,8 @@
                 CornerRadius="20"
                 HasShadow="False"
                 x:DataType="c:Location"
-                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}">
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource Background_Mid}}"
+                HandlerChanged="OnHandlerChanged">
                 <Grid
                                 RowDefinitions="42,40,*"
                                 Padding="20">
@@ -120,10 +121,13 @@
             </Border>
         </DataTemplate>
     </ContentPage.Resources>
-    
-    
+
+    <Grid
+        ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+        RowDefinitions="{OnIdiom Phone='*,68', Default='*'}"
+        >
         <!-- Main Section -->
-        <ScrollView>
+        <ScrollView Grid.Column="{OnIdiom Phone=0,Default=1}">
             <VerticalStackLayout>
 
                 <!-- Search Box -->
@@ -147,6 +151,7 @@
 
                 <!-- Actual Content -->
             <CollectionView
+                x:Name="collectionView"
                 Margin="8,0"
                 ItemsSource="{Binding Favorites}"
                 ItemTemplate="{StaticResource FavTemplate}">
@@ -180,5 +185,11 @@
 
         </VerticalStackLayout>
         </ScrollView>
+
+    <!-- Menu -->
+        <v:NavBarView
+                x:Name="NavBar"
+                Grid.Row="{OnIdiom Phone=1, Default=0}"/>
+    </Grid>
 
 </ContentPage>

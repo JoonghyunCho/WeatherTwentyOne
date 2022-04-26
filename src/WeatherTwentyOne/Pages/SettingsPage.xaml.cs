@@ -8,6 +8,8 @@ public partial class SettingsPage : ContentPage
     {
         InitializeComponent();
 
+        NavBar.ActiveTab = "Settings";
+
         BindingContext = new SettingsViewModel();
     }
 

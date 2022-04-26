@@ -8,6 +8,8 @@ public partial class FavoritesPage : ContentPage
     {
         InitializeComponent();
 
+        NavBar.ActiveTab = "Favorites";
+
         BindingContext = new FavoritesViewModel();
     }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
+using Microsoft.Maui.Controls.Compatibility.Hosting;
 using WeatherTwentyOne.Pages;
 using WeatherTwentyOne.ViewModels;
 
@@ -33,6 +34,9 @@ public static class MauiProgram
             }));
 #endif
         });
+#if TIZEN
+        builder.UseMauiCompatibility();
+#endif
 
         var services = builder.Services;
 #if WINDOWS
